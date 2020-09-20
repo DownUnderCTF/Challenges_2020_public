@@ -25,7 +25,7 @@ Chaining multiple vulnerabilties (detailed in the writeup section) eventually le
 10. Try {{ 7*7 }} and we get 49. This means we got server side template injection for jinja2.
 11. Dump the config for our flask by doing {{ config.items() }}.
 12. In the config items, notice that the secret key is a hint on a function we can use.
-13. Type {{ get_file("/fl4g.txt") }} to get the flag.
+13. Type {{ getFile("/fl4g.txt") }} to get the flag.
 
 ## Running
 Running `docker-compose up` should be enough to build the challenge and deploy it on port 5000.
