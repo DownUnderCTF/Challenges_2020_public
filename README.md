@@ -43,8 +43,8 @@
 - [Bad man](./OSINT/bad-man)
 - [Off the Rails](./OSINT/Off-the-Rails)
 - [Off the Rails 2: Electric Boogaloo: Far from Home](./OSINT/Off-the-Rails-2-Electric-Boogaloo-Far-from-Home)
-- [Off the Rails 3 - LOCOmotive](./OSINT/Off-the-Rails--LOCOmotive)
-- [Off the Rails 4 - Back by unpopular demand](./OSINT/Off-the-Rails-4--Back-by-unpopular-demand)
+- [Off the Rails 3 - LOCOmotive](./OSINT/Off-the-Rails-LOCOmotive)
+- [Off the Rails 4 - Back by unpopular demand](./OSINT/Off-the-Rails-4-Back-by-unpopular-demand)
 - [Outback Stakeout](./OSINT/Outback-Stakeout)
 - [A turn of events w/ some REALLY bad OPSEC](./OSINT/A-turn-of-events-w-some-REALLY-bad-OPSEC)
 
