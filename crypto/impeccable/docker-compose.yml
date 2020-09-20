@@ -1,0 +1,7 @@
+version: '3'
+services:
+  impeccable:
+    build: .
+    ports:
+      - "1337:1337"  # exposed:local
+    privileged: true # required to create cgroups for each connection

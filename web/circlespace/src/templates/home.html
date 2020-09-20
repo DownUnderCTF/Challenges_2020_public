@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero is-fullheight is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+            CircleSpace
+        </h1>
+        <h2 class="subtitle">
+          Join some circles today
+        </h2>
+        <form method="POST" action="/create">
+            <input class="input" name="name" placeholder="Circle Name" />
+            <input class="button is-primary" type="submit" value="Create My Circle!" />
+        </form>
+      </div>
+    </div>
+</section>
+{% endblock %}

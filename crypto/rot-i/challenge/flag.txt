@@ -1,0 +1,1 @@
+DUCTF{crypto_is_fun_kjqlptzy}

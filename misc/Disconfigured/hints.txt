@@ -1,0 +1,5 @@
+Hint 1: If you wanna be a cool dev 😎 and look at snowflakes ❄️ - turn on dev mode in your settings!
+
+Hint 2: I wonder who\'s doing the escaping here? 🤔
+
+Hint 3: If each server has an ID, don't you think a good way to store the servers notes is to use it?

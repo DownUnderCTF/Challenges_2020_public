@@ -1,0 +1,8 @@
+memeboy.json
+.env
+bot-src/node_modules/
+
+terraform/.terraform
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/terraform

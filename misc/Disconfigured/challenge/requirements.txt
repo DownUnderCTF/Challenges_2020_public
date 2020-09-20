@@ -1,0 +1,12 @@
+aiohttp==3.6.2
+async-timeout==3.0.1
+attrs==20.1.0
+chardet==3.0.4
+discord.py==1.4.1
+idna==2.10
+multidict==4.7.6
+pymongo==3.11.0
+toml==0.10.1
+typing-extensions==3.7.4.3
+websockets==8.1
+yarl==1.5.1

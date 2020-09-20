@@ -1,0 +1,14 @@
+{% extends "_pretty.html" %}
+{% block header %}
+<h1>Login</h1>
+{% endblock %}
+{% block content %}
+<form method="POST" action="/login">
+    <p>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Username">
+    </p>
+    <p class="text-error">{{ msg if msg is not none else '' }}</p>
+    <p><button class="button primary">Login</button></p>
+</form>
+{% endblock %}

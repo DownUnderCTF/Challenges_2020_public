@@ -1,0 +1,58 @@
+{% extends "_pretty.html" %}
+{% block header %}
+<h1>Welcome {{ username }}</h1>
+{% endblock %}
+{% block content %}
+<section style="margin-bottom: 2.5em;">
+    <h4>About</h4>
+    <div><p>Current Rating: <code>{{ score if score is not none else 'Unrated' }}</code></p></div>
+    {% if score == 10 %}
+    <div style="font-weight: bold;"><p>Congrats on achieving the highest possible score! Your invitation code is <code>{{ flag }}</code></p></div>
+    {% endif %}
+    <div><p>Playground link: <a href="/playground/{{ userid }}">{{ username }}'s playground</a></p></div>
+</section>
+<section style="margin-bottom: 2.5em">
+    <h4>Make a submission</h4>
+    <form id="submission">
+        <input type="hidden" name="csrf" value="{{ csrf }}">
+        <p>
+            <label for="url">URL</label>
+            <input type="url" name="url" id="url" required placeholder="Link to submission">
+        </p>
+        <p id="feedback"></p>
+        {{ recaptcha }}
+        <p>
+            <button class="button primary" type="submit">Submit</button>
+        </p>
+    </form>
+</section>
+<section>
+    <a href="/logout" class="button error">Logout</a>
+</section>
+<script>
+(function() {
+    "use strict";
+    const form = document.getElementById('submission');
+    const url = document.getElementById('url');
+    const feedback = document.getElementById('feedback');
+
+    form.addEventListener('submit', async evt => {
+        evt.preventDefault();
+        feedback.textContent = '';
+
+        const data = new FormData(form);
+        const resp = await fetch('/api/submit', {
+            method: 'POST',
+            body: data
+        });
+        feedback.textContent = await resp.text();
+
+        if(!resp.ok) {
+            feedback.classList.add('text-error');
+        } else {
+            feedback.classList.remove('text-error');
+        }
+    });
+})();
+</script>
+{% endblock %}

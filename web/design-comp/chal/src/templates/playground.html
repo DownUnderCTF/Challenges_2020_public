@@ -1,0 +1,18 @@
+{% extends "_base_ugly.html" %}
+{% block resources %}
+<style id="user-styles"></style>
+<script src="{{ url_for('static', filename='playground.js') }}" defer></script>
+{% endblock %}
+{% block header %}
+<div id="toolbar" style="position: absolute; right: 1em">
+    <div style="float: right">
+        <button id="edit">Open Editor</button>
+    </div>
+    <form id="rater" {% if 'admin' not in session or not session['admin'] %}style="display:none"{% endif %}>
+        <input type="hidden" name="csrf" value="{{ csrf }}">
+        <input type="number" placeholder="Score (/10)" name="score">
+        <input type="submit" value="Rate">
+        <p class="feedback"></p>
+    </form>
+</div>
+{% endblock %}

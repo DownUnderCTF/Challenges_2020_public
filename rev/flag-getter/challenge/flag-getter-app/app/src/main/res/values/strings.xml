@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GET-flag</string>
+    <string name="b1">GET flag 1/4</string>
+    <string name="b2">GET flag 2/4</string>
+    <string name="b3">GET flag 3/4</string>
+    <string name="b4">GET flag 4/4</string>
+    <string name="load">Loading...</string>
+</resources>

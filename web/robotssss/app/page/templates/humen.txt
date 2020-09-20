@@ -1,0 +1,8 @@
+<html>
+    <body>
+        <pre>
+User-agent: humans
+Disallow: /Bender
+        </pre>
+    </body>
+</html>

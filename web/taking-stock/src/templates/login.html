@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="container" style="margin-top: 2.5em">
+    <h1 class="title is-1">Login</h1>
+    <div>
+        <form action="/login" method="POST">
+            <div class="field">
+                <label for="username">Username</label>
+                <div class="control">
+                    <input type="text" required name="username" id="username" class="input">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}

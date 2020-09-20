@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+<h1 class="title is-1">{{ name }}</h1>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<p class="notification">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<p>{{ info }}</p>
+
+<br>
+<h2 class="title is-4">Check if someone is part of your circle</h2>
+<form method="GET" action="{{ request.path }}/people">
+    <input class="input" name="name" type="text" placeholder="Name" />
+    <input class="button is-dark" type="submit" value="Check" />
+</form>
+<br>
+<h2 class="title is-4">Add a person to your circle</h2>
+<form method="POST" action="{{ request.path }}/people">
+    <input class="input" name="name" type="text" placeholder="Name" />
+    <input class="button is-primary" type="submit" value="Add Person" />
+</form>
+</div>
+{% endblock %}

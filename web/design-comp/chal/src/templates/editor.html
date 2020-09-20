@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Design Competition</title>
+        <script src="{{ url_for('static', filename='thirdparty/ace/ace.js') }}"></script>
+        <script src="{{ url_for('static', filename='editor.js') }}" defer></script>
+        <style>
+            /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left}
+            #editor {
+                height: calc(100vh - 4em);
+                width: 100vw;
+            }
+            #control {
+                background-color: #373b41;
+                height: 4em;
+                padding: 1em;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #eee;
+            }
+
+            #control button, #control select {
+                padding: 0.25em 1em;
+                font-size: 16px;
+                margin-right: 1em;
+                background-color: #373b41;
+                border: 1px solid #999;
+                cursor: pointer;
+                color: inherit !important;
+            }
+
+            #control button:hover {
+                background-color: #272b31;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="editor"></div>
+        <div id="control">
+            <div>
+                <label for="key-bindings">Keybindings: </label>
+                <select id="key-bindings">
+                    <option value="default">Default</option>
+                    <option value="vim">Vim</option>
+                </select>
+            </div>
+            <div>
+                <button id="preview">Preview</button>
+            </div>
+        </div>
+    </body>
+</html>

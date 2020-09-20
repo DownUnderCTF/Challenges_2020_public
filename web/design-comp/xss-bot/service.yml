@@ -1,0 +1,9 @@
+version: "2.4"
+
+services:
+  xssbot:
+    build: .
+    image: xss-bot.infra.ctf
+    init: true
+    security_opt:
+      - seccomp=${XSSBOT_VENDOR_PATH}/seccomp/chrome.json

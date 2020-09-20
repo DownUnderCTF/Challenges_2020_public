@@ -1,0 +1,4 @@
+runtime: nodejs10
+
+env_variables:
+  FLAG: "DUCTF{and_thats_the_way_its_gonna_be_little_darling_we'll_be_riding_on_the_horses_YEAAAAAAAAAAAAAAAAAAAAYEAAAAAAAAAAAAAAAAAAAAH}"

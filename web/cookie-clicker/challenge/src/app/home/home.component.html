@@ -1,0 +1,41 @@
+<!--<div *ngIf="authService.user$ | async as user">-->
+<!--  <pre>-->
+<!--    {{user | json}}-->
+<!--  </pre>-->
+<!--</div>-->
+
+<!--<div *ngIf="authService.cookie$ | async as cookie">-->
+<!--  <pre>-->
+<!--    {{cookie | json}}-->
+<!--  </pre>-->
+<!--</div>-->
+
+<nz-row *ngIf="authService.user$ | async as user" nzType="flex" nzJustify="center">
+  <nz-col [nzSpan]="7">
+
+    <nz-row nzJustify="center">
+      <h1>Welcome {{user.email}}</h1>
+    </nz-row>
+
+    <nz-row nzJustify="center">
+      <img (click)="authService.clickCookie()" width="400" src="assets/cookie.png"/>
+    </nz-row>
+
+    <nz-row nzJustify="center">
+      <p class=""> You have clicked the cookie {{user.cookieCount || 0}} times </p>
+    </nz-row>
+
+    <nz-row nzJustify="center" *ngIf="authService.cookie$| async as cookie">
+      <p> Together everyone has clicked the cookie {{cookie.cookieCount}} times </p>
+    </nz-row>
+    <nz-row nzJustify="center">
+      <button nz-button nzSize="large" (click)="authService.clickCookie()">Click</button>
+    </nz-row>
+  </nz-col>
+</nz-row>
+
+<nz-row style="margin-top: 30px;" nzJustify="center">
+  <button nz-button nzType="danger" (click)="authService.signOut()">Sign out</button>
+</nz-row>
+
+

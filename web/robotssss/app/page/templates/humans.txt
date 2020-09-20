@@ -1,0 +1,8 @@
+<html>
+    <body>
+        <pre>
+User-agent: humans
+Disallow: /4dm1n_Cr3ds
+        </pre>
+    </body>
+</html>

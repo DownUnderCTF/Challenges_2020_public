@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+
+</br></br>
+<h4>You have reached the admin terminal! I can echo anything you type in :).</h4>
+<div class="form-group">
+    <label class="col-form-label" for="inputDefault">Default input</label>
+    <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {{ person }}
+</div>
+
+{% endblock %}

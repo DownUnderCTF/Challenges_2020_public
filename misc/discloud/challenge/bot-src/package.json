@@ -1,0 +1,19 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Does epic things with memes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Blue Alder",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^5.1.2",
+    "argparse": "^1.0.10",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "prompts": "^2.3.2"
+  }
+}

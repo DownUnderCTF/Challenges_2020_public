@@ -1,0 +1,9 @@
+Hint 1: It's not a buffer overflow (not intended, anyway).
+
+Hint 2: %x
+
+Hint 3: Take a look at the stack, and if you can use values left over on it to figure out where you and cool things are.
+
+Hint 4: You gotta be a little bit efficient at first, then you can just return to main.
+
+Hint 5: You can figure out the libc.

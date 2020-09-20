@@ -1,0 +1,8 @@
+version: '3'
+services:
+  is-this-pwn-or-web: # challenge name
+    build: .
+    ports:
+      - "1337:1337" # local:container
+    read_only: false
+    privileged: true

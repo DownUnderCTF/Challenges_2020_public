@@ -1,0 +1,38 @@
+<nz-row nzType="flex" nzJustify="center">
+  <nz-col [nzSpan]="4" >
+    <h1>Register!</h1>
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group [nzPrefix]="prefixUser">
+            <input type="email" nz-input formControlName="email" placeholder="email" />
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('email')?.dirty && validateForm.get('email')?.errors"
+          >Please input your email!</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group [nzPrefix]="prefixLock">
+            <input type="password" nz-input formControlName="password" placeholder="Password" />
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('password')?.dirty && validateForm.get('password')?.errors"
+          >Please input your Password!</nz-form-explain
+          >
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+
+          <button [nzLoading]="loading" nz-button class="login-form-button" [nzType]="'primary'">Register</button>
+          Or
+          <a routerLink="/login">log in</a>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <ng-template #prefixUser><i nz-icon nzType="user"></i></ng-template>
+    <ng-template #prefixLock><i nz-icon nzType="lock"></i></ng-template>
+  </nz-col>
+</nz-row>

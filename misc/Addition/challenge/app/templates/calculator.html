@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Joe's Supreme calculator</title>
+</head>
+<style type="text/css">
+	html{
+		background-color: #fff2d2;
+	}
+	form{
+		text-align: center;
+		font-size: 35px;
+		padding-top: 5%;
+	}
+	.output {
+		text-align: center;
+		font-size: 25px;
+		padding-top: 25px;
+		padding-right: 20%;
+		padding-left: 20%;
+	}
+</style>
+<body>
+	{% block content %}
+	<div class="output">
+		My mega calculator can do any calculations python will let you do. Use * + - / % to do complex problems if you want.
+	</div>
+	<form action="" method="post">
+	{{ form.user_input.label }}<br>
+	{{ form.user_input }}
+	<br>
+	{{ form.submit }}
+	</form>
+	<div class="output">
+		{% if out %} {{ out }} {% else %} Enter data and the results will be shown here! {% endif %}
+	 </div>
+	{% endblock content %}
+</body>
+</html>

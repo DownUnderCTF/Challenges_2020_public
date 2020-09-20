@@ -1,0 +1,8 @@
+version: '3.3'
+
+services:
+  ssti:
+    container_name: ssti
+    build: ./
+    ports:
+      - 5000:5000

@@ -1,0 +1,9 @@
+# build-only file: run with docker-compose build
+version: "2.2"
+services:
+  bin-builder:
+    build: "./bin-builder"
+    image: downunderctf/bin-builder
+  nsjail:
+    build: "./nsjail"
+    image: downunderctf/nsjail

@@ -1,0 +1,21 @@
+version: "2.4"
+
+services:
+    redis:
+        image: redis:6-alpine
+    
+    xssbot:
+        build: xss-bot/
+        image: xssbot.infra.ctf
+        security_opt:
+          - seccomp=xss-bot/seccomp/chrome.json
+    
+    web:
+        image: design-comp-v2.web.ctf
+        build: chal/
+        depends_on:
+          - redis
+          - xssbot
+        ports:
+            - 8000:8000
+        env_file: chal/meta/env

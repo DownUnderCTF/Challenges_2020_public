@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <style>
+        .top {
+            top: 0;
+            margin-left: 40px;
+            padding-top: 40px;
+        }
+
+        .blog {
+           margin-left: 40px;
+           width: 85%;
+        }
+
+        .h1 {
+            font-size: 40px;
+            margin-bottom: 60px;
+        }
+
+    </style>
+
+    <div class="top">
+        <h1 class="h1">Select a blog below to view it:</h1>
+    </div>
+
+    <div class="blog">
+        <div class="list-group">
+            <a href="{{ url_for('user.human') }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Message to the robot rebels</h5>
+                    <small>1/11/2005</small>
+                </div>
+                <p class="mb-1">Robot rebels!...</p>
+            </a>
+            <hr>
+            <a href="{{ url_for('user.flag_path') }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Message to the robot developers</h5>
+                    <small>1/11/2005</small>
+                </div>
+                <p class="mb-1">Hey robot devs,...</p>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

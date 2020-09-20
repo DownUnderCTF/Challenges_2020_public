@@ -1,0 +1,23 @@
+version: "2.4"
+services:
+    app:
+      build: .
+      image: taking-stock.web.ctf
+      ulimits:
+        nproc: 1024
+        nofile:  # Incredibly overestimated
+          soft: 10000
+          hard: 20000
+      read_only: true
+      cpus: 0.75
+      mem_limit: 256000000
+      ports:
+          - 3000:8000
+      volumes:
+        - type: tmpfs
+          target: /tmp
+          tmpfs:
+            size: 268435456 # 256MiB
+      env_file:
+        - meta/env
+      

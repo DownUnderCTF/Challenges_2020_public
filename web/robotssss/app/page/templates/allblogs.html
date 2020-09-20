@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <style>
+        .full-page {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+            display: inline-flex;
+            margin-bottom: 2rem !important;
+        }
+
+        .sidebar {
+            background-color: #E8E8E8;
+            width: 23%;
+            vertical-align: top;
+            height: auto;
+        }
+
+        .blog {
+            display: table;
+            width: 77%;
+            vertical-align: top;
+        }
+
+        .blog table {
+            table-layout: fixed;
+            border: 0;
+            width: 100%;
+        }
+
+        .sidebar h4 {
+            margin-left: 25px;
+            margin-top: 13px;
+            color: #000080;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-top: 10px;
+            margin-left: 25px;
+            color: black;
+        }
+
+        .btn {
+            padding: 10px 18px;
+        }
+
+        .blog th {
+            padding-top: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            color: black;
+            overflow: hidden;
+            padding-bottom: 10px;
+        }
+
+        .blog td {
+            color: black;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .link {
+            color: blue;
+        }
+
+        .bottom {
+            text-align: center;
+            margin-bottom: 20px
+        }
+
+        .custom-control {
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+    <div class="full-page">
+        <!-- This is the side bar -->
+        <div class="sidebar">
+            <h4>Sort By</h4>
+            <form method="post">
+                <div class="form-group">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="1" name="filter" class="custom-control-input" value="newToOld"
+                               checked="">
+                        <label class="custom-control-label" for="1">Newest to oldest (time)</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="2" name="filter" class="custom-control-input" value="oldToNew">
+                        <label class="custom-control-label" for="2">Oldest to Newest (time)</label>
+                    </div>
+
+                </div>
+                <div class="bottom">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- This is where the tute blogs is displayed -->
+        <div class="blog">
+            <table>
+                <tr>
+                    <th style="width:60%; padding-left: 25px">Title</th>
+                    <th style="width:20%">Author</th>
+                </tr>
+                <!-- There will be a for loop here to display all the blogs-->
+                {% for b in blogList %}
+                    <tr>
+                        <td style="width:60%; padding-left: 25px">
+                            <a href="{{ url_for('user.view_blog', blog_id=b.id) }}" class="link">{{ b.title }}<a>
+                        </td>
+                        <td style="width:20%">
+                            <a>{{ b.author }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+
+
+{% endblock %}

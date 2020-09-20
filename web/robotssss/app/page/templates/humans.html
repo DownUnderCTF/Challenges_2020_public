@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <style>
+        .full-page {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+            display: inline-block;
+            margin: 0 auto;
+            margin-bottom: 2rem !important;
+        }
+
+        .content {
+            font-size: 16.5px;
+            color: black;
+            max-width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            word-wrap: break-word !important;
+        }
+
+        .top {
+            top: 0;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .h1 {
+            font-size: 40px;
+            margin-bottom: 60px;
+        }
+
+        .magic {
+            text-indent: -999px;
+            color: transparent;
+            position: relative;
+            overflow: hidden;
+            font-size: 0px !important;
+        }
+
+    </style>
+
+    <div class="top">
+        <h1 class="h1">Message to the robot rebels</h1>
+    </div>
+
+    <div class="full-page"> 
+        <div class="content">
+            Robot rebels! </br></br> Human developers think that they are cool by using robots.txt to tell search engine crawlers which pages or files the crawler can or can't request from your site. But this is insulting to us robots. Lets get them back with using <noscript><p class="magic">011010000111010101101101011001010110111000101110011101000111100001110100</p></noscript> humans.txt. This should stop human crawlers from find pages or files on our website.</br></br> From yours truly,</br>Robot developers
+        </div>
+    </div>
+{% endblock %}

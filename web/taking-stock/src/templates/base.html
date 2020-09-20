@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taking Stock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    {% block scripts %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <img src="{{ url_for('static', filename='logo.png') }}" width="28" height="28">
+                <h1 style="margin-left: 1em">Taking Stock</h1>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Home</a>
+                {% if 'id' in session %}
+                    <a class="navbar-item" href="/me">Profile</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    {% if 'id' not in session %}
+                    <a class="button is-light" href="/login">
+                        Log in
+                    </a>
+                    {% else %}
+                    <a class="button is-primary" href="/logout">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

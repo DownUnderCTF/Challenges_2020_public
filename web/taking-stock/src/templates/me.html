@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block scripts %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% endblock %}
+{% block content %}
+<main class="container" style="margin-top: 2.5em">
+    <h1 class="title is-1">Profile</h1>
+    <div class="columns">
+        <div class="column">
+            <h4 class="title is-4">@{{ username }}</h4>
+            <img src="/profile-picture/{{ session['id'] }}" alt="Profile Picture">
+        </div>
+        <div class="column">
+            <h3 class="title is-3">Edit</h3>
+            <form action="/profile-picture" method="POST" enctype="multipart/form-data">
+                <div class="field">
+                    <label for="img">Upload Profile Picture</label>
+                    <div class="control">
+                        <div class="file has-name">
+                            <label class="file-label">
+                                <input class="file-input" type="file" name="img" accept="image/png">
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fa fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choose a file…
+                                    </span>
+                                </span>
+                                <span class="file-name" id="file-name">None</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary">Upload</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<script>
+    const img = document.querySelector('[name="img"]');
+    img.addEventListener('change', () => {
+        document.querySelector('#file-name').textContent = img.files[0].name;
+    })
+</script>
+{% endblock %}

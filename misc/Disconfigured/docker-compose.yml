@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+    bot:
+        build:
+            context: ./
+        restart: always
+        env_file: ./challenge/.env
+        networks:
+            - ductf-bot-net
+        depends_on:
+            - mongo
+
+    mongo:
+        image: mongo
+        restart: always
+        volumes:
+            - db:/data/db
+        expose:
+            - 27017
+        networks:
+            - ductf-bot-net
+
+volumes:
+    db:
+
+networks:
+    ductf-bot-net:

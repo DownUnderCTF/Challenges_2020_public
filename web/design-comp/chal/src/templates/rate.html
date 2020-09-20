@@ -1,0 +1,25 @@
+{% extends "_pretty.html" %}
+{% block header %}
+<h1>Rate {{ user_id }}</h1>
+{% endblock %}
+{% block content %}
+<form id="rater" method="POST" action="/admin/rate">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <input type="hidden" name="user" value="{{ user_id }}">
+    <input type="number" placeholder="Score (/10)" name="score">
+    <input type="submit" value="Rate">
+</form>
+<script>
+(async function() {
+    const search = new URLSearchParams(window.location.search);
+    document.querySelector('[name="score"]').value = search.get('score') || '';
+
+    if(search.has('submit')) {
+        await fetch(`/admin/rate`, {
+            method: 'POST',
+            body: new FormData(document.getElementById('rater'))
+        });
+    }
+})();
+</script>
+{% endblock %}
