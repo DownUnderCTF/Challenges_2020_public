@@ -56,7 +56,7 @@
 - [Return to what's revenge](./pwn/return-to-whats-revenge)
 - [my first echo server](./pwn/myfirstechoserver)
 - [zombie](./pwn/zombie)
-- [VECC](./pwn/VECC)
+- [VECC](./pwn/vecc)
 - [Is this pwn or web?](./pwn/is-this-pwn-or-web)
 
 ## rev
